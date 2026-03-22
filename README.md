@@ -65,6 +65,8 @@ java -jar jcompress.jar log.txt -zip -MD5
 
 ## Design Patterns
 
+![Class Diagram](class_diagram.png)
+
 | Pattern | Class(es) | Purpose |
 |---------|-----------|---------|
 | **Strategy** | `CompressionStrategy`, `EncryptionStrategy`, `ChecksumStrategy` | Interchangeable algorithm interfaces |
