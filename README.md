@@ -2,9 +2,27 @@
 
 A Java command-line tool for **compressing**, **encrypting**, and computing **checksums** on files. Operations are composed into a configurable processing pipeline via CLI flags.
 
+## Release
+
+| Version | Download | Date |
+|---------|----------|------|
+| **v1.0.0** | [jcompress.jar](https://github.com/6610685031/jcompress/releases/download/v1.0.0/jcompress.jar) | 2026-03-22 |
+
+See [all releases](https://github.com/6610685031/jcompress/releases) on GitHub.
+
 ## Usage
 
+### Using the pre-built JAR (recommended)
+
+Download `jcompress.jar` from the [latest release](https://github.com/6610685031/jcompress/releases/latest), then:
+
+```bash
+java -jar jcompress.jar <file> [-zip|-gzip] [-DES|-AES] [-MD5|-SHA256]
 ```
+
+### Building from source
+
+```bash
 javac -d out src/jcompress/**/*.java src/jcompress/*.java
 java -cp out jcompress.Main <file> [options]
 ```
@@ -26,16 +44,16 @@ You may combine **one** from each category per run. All categories are optional.
 
 ```bash
 # Compress with ZIP, encrypt with DES, compute MD5 checksum
-java -cp out jcompress.Main a.txt -zip -DES -MD5
+java -jar jcompress.jar a.txt -zip -DES -MD5
 
 # Compress with GZIP, encrypt with AES, compute SHA-256 checksum
-java -cp out jcompress.Main data.bin -gzip -AES -SHA256
+java -jar jcompress.jar data.bin -gzip -AES -SHA256
 
 # Compress only
-java -cp out jcompress.Main log.txt -zip
+java -jar jcompress.jar log.txt -zip
 
 # Compress + checksum (no encryption)
-java -cp out jcompress.Main log.txt -zip -MD5
+java -jar jcompress.jar log.txt -zip -MD5
 ```
 
 ### Output

@@ -17,3 +17,6 @@ test.txt.*
 # OS files
 Thumbs.db
 .DS_Store
+
+# Build artifacts
+*.jar
